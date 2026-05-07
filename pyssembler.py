@@ -22,7 +22,7 @@ def clean(line):
 
 def main():
     if len(sys.argv) < 3:
-        print("Uso: python montador.py entrada.asm -b ou -h")
+        print("Uso: python pyssembler.py entrada.asm -b ou -h")
         return
 
     input_file = sys.argv[1]
@@ -98,7 +98,7 @@ def main():
             print(f"Erro na instrução no PC {hex(pc)}: {text} ({e})")
             return
 
-    # Geração da saída
+    # Saída
     out_ext = ".bin" if mode == "-b" else ".hex"
     out_file = os.path.splitext(input_file)[0] + out_ext
     with open(out_file, 'w') as f:
@@ -108,7 +108,7 @@ def main():
         else:
             f.write("\n".join(machine_code) + "\n")
 
-    # Estatísticas de CPI
+    # CPI
     total_inst = len(machine_code)
     total_cycles = 0
     cycle_map = {}

@@ -1,4 +1,4 @@
-# Register aliases (name -> number)
+# Alias de registradores (nome -> número)
 REGS = {
     "$zero": 0, "$0": 0, "$at": 1, "$1": 1, "$v0": 2, "$2": 2, "$v1": 3, "$3": 3,
     "$a0": 4, "$4": 4, "$a1": 5, "$5": 5, "$a2": 6, "$6": 6, "$a3": 7, "$7": 7,
@@ -10,7 +10,7 @@ REGS = {
     "$gp": 28, "$28": 28, "$sp": 29, "$29": 29, "$fp": 30, "$30": 30, "$ra": 31, "$31": 31
 }
 
-# R-format ops: mnemonic -> (opcode, funct)
+# Operações formato-R: mnemônico -> (opcode, funct)
 TYPE_R = {
     "sll": (0, 0), "srl": (0, 2), "jr": (0, 8), "mfhi": (0, 16), "mflo": (0, 18),
     "mult": (0, 24), "multu": (0, 25), "div": (0, 26), "divu": (0, 27),
@@ -18,13 +18,13 @@ TYPE_R = {
     "and": (0, 36), "or": (0, 37), "slt": (0, 42), "sltu": (0, 43), "mul": (28, 2)
 }
 
-# I-format ops: mnemonic -> opcode
+# Operações formato-I: mnemônico -> opcode
 TYPE_I = {
     "beq": 4, "bne": 5, "addi": 8, "addiu": 9, "slti": 10, "sltiu": 11,
     "andi": 12, "ori": 13, "lui": 15, "lw": 35, "sw": 43
 }
 
-# J-format ops: mnemonic -> opcode
+# Operações formato-J: mnemônico -> opcode
 TYPE_J = {
     "j": 2, "jal": 3
 }
